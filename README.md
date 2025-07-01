@@ -205,7 +205,15 @@ MRI reveals contrast-enhancing brain tumor with mass effect.: 1.5591444647950763
 If you find our work and this repository helpful, please consider giving our repo a star and citing our paper as follows:
 
 ```bibtex
-xx
+@misc{wang2025unifyingbiomedicalvisionlanguageexpertise,
+      title={Unifying Biomedical Vision-Language Expertise: Towards a Generalist Foundation Model via Multi-CLIP Knowledge Distillation}, 
+      author={Shansong Wang and Zhecheng Jin and Mingzhe Hu and Mojtaba Safari and Feng Zhao and Chih-Wei Chang and Richard LJ Qiu and Justin Roper and David S. Yu and Xiaofeng Yang},
+      year={2025},
+      eprint={2506.22567},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2506.22567}, 
+}
 ```
 
 ## Acknowledgement
