@@ -25,6 +25,7 @@ pip install -r requirements.txt
 
 ## Data preparation
 
+We have prepared a demo dataset to help with quickly debugging the training code. See the [MMKDCLIP_DATA](https://github.com/wangshansong1/MMKD-CLIP/tree/main/MMKDCLIP_DATA) folder for details. For the original image and text data, please download them from the repository specified by [BMCA](https://huggingface.co/datasets/BIOMEDICA/biomedica_webdataset_24M/tree/main). For instructions on how to further process the BMCA dataset into our distilled dataset, please refer to the [DataProcessing](https://github.com/wangshansong1/MMKD-CLIP/tree/main/DataProcessing) folder.
 
 ## Download Model
 
