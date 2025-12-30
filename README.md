@@ -25,7 +25,33 @@ pip install -r requirements.txt
 
 ## Data preparation
 
-We have prepared a demo dataset to help with quickly debugging the training code. See the [MMKDCLIP_DATA](https://github.com/wangshansong1/MMKD-CLIP/tree/main/MMKDCLIP_DATA) folder for details. For the original image and text data, please download them from the repository specified by [BMCA](https://huggingface.co/datasets/BIOMEDICA/biomedica_webdataset_24M/tree/main). For instructions on how to further process the BMCA dataset into our distilled dataset, please refer to the [DataProcessing](https://github.com/wangshansong1/MMKD-CLIP/tree/main/DataProcessing) folder.
+For the training dataset, we have prepared a demo dataset to help with quickly debugging the training code. See the [MMKDCLIP_DATA](https://github.com/wangshansong1/MMKD-CLIP/tree/main/MMKDCLIP_DATA) folder for details. For the original image and text data, please download them from the repository specified by [BMCA](https://huggingface.co/datasets/BIOMEDICA/biomedica_webdataset_24M/tree/main). For instructions on how to further process the BMCA dataset into our distilled dataset, please refer to the [DataProcessing](https://github.com/wangshansong1/MMKD-CLIP/tree/main/DataProcessing) folder.
+
+For the evaluation dataset, please download [here](https://huggingface.co/datasets/Shansong/zeroshotclassification)。
+
+## Training
+
+First, you need to change the path to the evaluation dataset specified in [src/clipeval/dataset_catalog.json](https://github.com/wangshansong1/MMKD-CLIP/blob/main/src/clipeval/dataset_catalog.json). And change the path in [src/training/run_configs_400m.py](https://github.com/wangshansong1/MMKD-CLIP/blob/main/src/training/run_configs_400m.py). Finally, change the paths on lines 411 and 414 of [src/training/main_kd.py](https://github.com/wangshansong1/MMKD-CLIP/blob/main/src/training/main_kd.py). 
+
+For the first stage of CLIP-style pre-training, we used the following command:
+```bash
+python src/training/main_kd.py b16_400m stage1 metaclip_400m
+```
+[b16_400m] refers to the training settings in run_configs_400m.py.[stage1] refers to the name of the experiment for this training session. [metaclip_400m] refers to the pre-loaded weights; we start with metaclip_400m.
+
+For the second stage of multi-teacher distillation, we use the following command:
+```bash
+python src/training/main_kd.py b16_kd stage2 /path/to/stage1/checkpoints/epoch_stage1.pt
+```
+
+[b16_kd] refers to the training settings in run_configs_400m.py.[stage2] refers to the name of the experiment for this training session. [/path/to/stage1/checkpoints/epoch_stage1.pt] refers to the pre-loaded weights; we start from the best model saved from the first stage.
+
+## Evaluation
+
+Change the paths on lines 95-96 of `src/training/eval.py`, and then run the script directly.
+```bash
+python src/training/eval.py
+```
 
 ## Download Model
 
