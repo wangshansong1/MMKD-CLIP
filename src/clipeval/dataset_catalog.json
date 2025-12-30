@@ -1,0 +1,8 @@
+{
+  "LC25000_colon": {
+    "path": "/path/MMKDCLIP_DATA/zeroshotclassification/LC25000_colon/"
+  },
+  "LC25000_lung": {
+    "path": "/path/MMKDCLIP_DATA/zeroshotclassification/LC25000_lung/"
+  }
+}
