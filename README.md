@@ -25,7 +25,7 @@ pip install -r requirements.txt
 
 ## Data preparation
 
-For the training dataset, we have prepared a demo dataset to help with quickly debugging the training code. See the [MMKDCLIP_DATA](https://github.com/wangshansong1/MMKD-CLIP/tree/main/MMKDCLIP_DATA) folder for details. For the original image and text data, please download them from the repository specified by [BMCA](https://huggingface.co/datasets/BIOMEDICA/biomedica_webdataset_24M/tree/main). For instructions on how to further process the BMCA dataset into our distilled dataset, please refer to the [DataProcessing](https://github.com/wangshansong1/MMKD-CLIP/tree/main/DataProcessing) folder.
+For the training dataset, we have prepared a demo dataset to help with quickly debugging the training code. See the [MMKDCLIP_DATA](https://github.com/wangshansong1/MMKD-CLIP/tree/main/MMKDCLIP_DATA) folder for details. For the original image and text data, please download them from the repository specified by [BMCA](https://huggingface.co/datasets/BIOMEDICA/biomedica_webdataset_24M/tree/main). For the second stage of distillation, you can directly download our [pre-processed dataset](https://drive.google.com/drive/folders/1mUjaX9a_vk-mJ8Xk4N2CUcQKFnXjAnYa?usp=drive_link).
 
 For the evaluation dataset, please download [here](https://huggingface.co/datasets/Shansong/zeroshotclassification)。
 
